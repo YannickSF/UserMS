@@ -22,7 +22,7 @@ user_create_schema = {
     "type": "object",
     "properties": {
         "id": {"type": "string"},
-        "creation_date": {"type": "string"},
+        "date_creation": {"type": "string"},
         "username": {"type": "string"},
         "password": {"type": "string"},
         "mail": {"type": "string"},
@@ -34,7 +34,7 @@ user_update_schema = {
     "type": "object",
     "properties": {
         "id": {"type": "string"},
-        "creation_date": {"type": "string"},
+        "date_creation": {"type": "string"},
         "username": {"type": "string"},
         "password": {"type": "string"},
         "firstname": {"type": "string"},

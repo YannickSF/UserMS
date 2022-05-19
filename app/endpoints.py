@@ -53,3 +53,20 @@ def delete_user(id):
         return {'response': ctx.delete_user(id)}
 
     return {'error': 'method not allow.'}
+
+
+@app.route("/register", methods=['POST'])
+def post_user():
+    if request.method == 'POST':
+        return {'response': ctx.register(**request.get_json())}
+
+    return {'error': 'method not allow.'}
+
+
+@app.route("/login", methods=['POST'])
+def post_user():
+    if request.method == 'POST':
+        return {'response': ctx.login(**request.get_json())}
+
+    return {'error': 'method not allow.'}
+

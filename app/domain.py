@@ -17,7 +17,7 @@ class Domain:
         pass
 
     def create_user(self, **obj_to_create):
-        obj_to_create['creation_date'] = datetime.datetime.now().strftime("%Y-%m-%d")
+        obj_to_create['date_creation'] = datetime.datetime.now().strftime("%Y-%m-%d")
         obj_to_create['id'] = uuid.uuid4().__str__()
         new_user = User(**obj_to_create)
 
@@ -40,10 +40,9 @@ class Domain:
             return 'No user found.'
 
         upt_user = User(**obj_to_update)
-
         can = _update_validator(upt_user)
         if can == 200:
-            self._users_db.insert(upt_user.__repr__())
+            self._users_db.update(upt_user.__repr__(), q.id == id)
         return can
 
     def delete_user(self, id):

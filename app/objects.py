@@ -3,7 +3,7 @@ class User:
 
     def __init__(self, **kwargs):
         self.id = kwargs['id'] if 'id' in kwargs else None
-        self._creation_date = kwargs['creation_date'] if 'creation_date' in kwargs else None
+        self._date_creation = kwargs['date_creation'] if 'date_creation' in kwargs else None
 
         self.username = kwargs['username'] if 'username' in kwargs else None
         self.password = kwargs['password'] if 'password' in kwargs else None
@@ -18,7 +18,7 @@ class User:
     def __json__(self):
         return {
             "id": self.id,
-            "creation_date": self._creation_date,
+            "date_creation": self._date_creation,
             "username": self.username,
             "password": self.password,
             "firstname": self.firstname,
@@ -31,7 +31,7 @@ class User:
     def __repr__(self):
         return {
             'id': self.id,
-            'creation_date': self._creation_date,
+            'date_creation': self._date_creation,
             'username': self.username,
             'password': self.password,
             'firstname': self.firstname,
